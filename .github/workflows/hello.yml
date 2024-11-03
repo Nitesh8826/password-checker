@@ -1,13 +1,13 @@
-name: My first github actions
+name: My first github actions #this is my new commit
 
 on: [push]
 
 jobs:
-    build:
-        runs-on: ubuntu latest
+          build:
+            runs-on: ubuntu latest
 
-        strategy:
-            matrix:
+            strategy:
+              matrix:
                 python-version: [3.8,3.9]
 
             steps:
@@ -15,7 +15,7 @@ jobs:
             - name: set up Python
               uses: actions/setup-python@v2
               with:
-               python-version: ${{ matrix.pythonversion }}
+                python-version: ${{ matrix.pythonversion }}
 
             - name: Install dependencies
               run: |
